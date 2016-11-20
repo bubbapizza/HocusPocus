@@ -32,39 +32,45 @@ class DoorController():
         self.GPIO.setup(
             self.relay_1.read,
             self.GPIO.IN,
-            pull_up_down=self.GPIO.PUD_DOWN
+            pull_up_down=self.GPIO.PUD_DOWN,
+            delay=100
         )
         # Relay_2: Read
         self.GPIO.setup(
             self.relay_2.read,
             self.GPIO.IN,
-            pull_up_down=self.GPIO.PUD_DOWN
+            pull_up_down=self.GPIO.PUD_DOWN,
+            delay=100
         )
 
         # Relay_1: Engage
         self.GPIO.setup(
             self.relay_1.engage,
             self.GPIO.OUT,
-            pull_up_down=self.GPIO.PUD_DOWN
+            pull_up_down=self.GPIO.PUD_DOWN,
+            delay=100
         )
         # Relay_2: Engage
         self.GPIO.setup(
             self.relay_2.engage,
             self.GPIO.OUT,
-            pull_up_down=self.GPIO.PUD_DOWN
+            pull_up_down=self.GPIO.PUD_DOWN,
+            delay=100
         )
 
         # Red_LED
         self.GPIO.setup(
             self.red_pin,
             self.GPIO.OUT,
-            pull_up_down=self.GPIO.PUD_DOWN
+            pull_up_down=self.GPIO.PUD_DOWN,
+            delay=100
         )
         # Green_LED
         self.GPIO.setup(
             self.green_pin,
             self.GPIO.OUT,
-            pull_up_down=self.GPIO.PUD_DOWN
+            pull_up_down=self.GPIO.PUD_DOWN,
+            delay=100
         )
 
     @property

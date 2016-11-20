@@ -1,0 +1,5 @@
+#
+# The abracadabra cape needs write permissions to gpio 27,45,47, and 69
+#
+KERNEL=="gpio*", SUBSYSTEM=="gpio", ACTION=="add", PROGRAM="/bin/sh -c 'chown debian /sys%p/value; chown debian /sys%p/direction"
+
