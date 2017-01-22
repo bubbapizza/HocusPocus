@@ -1,5 +1,5 @@
 #
 # The hocuspocus user needs permissions to export gpio pins.
 #
-SUBSYSTEM=="gpio*", PROGRAM="/bin/sh -c 'sudo chgrp hocuspocus /sys/class/gpio; sudo chmod g+rwx /sys/class/gpio; sudo chgrp hocuspocus /sys/class/gpio/*export; sudo chmod g+w /sys/class/gpio/*export'"
+SUBSYSTEM=="gpio", PROGRAM="/bin/sh -c '/usr/local/bin/hocuspocus-udev.sh'"
 

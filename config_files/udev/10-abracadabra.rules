@@ -1,5 +1,11 @@
 #
-# The abracadabra cape needs write permissions to gpio 27,45,47, and 69
+# The abracadabra cape needs permissions to gpio pins 27,45,46,47,65 and 69
 #
-KERNEL=="gpio*", SUBSYSTEM=="gpio", ACTION=="add", PROGRAM="/bin/sh -c 'chown hocuspocus /sys%p/value; chown hocuspocus /sys%p/direction"
+#KERNEL=="gpio*", SUBSYSTEM=="gpio", ACTION=="add", PROGRAM="/bin/sh -c 'chown hocuspocus /sys%p/value; chown hocuspocus /sys%p/direction"
+KERNEL=="gpio27", SUBSYSTEM=="gpio", ACTION=="add", PROGRAM="/bin/sh -c '/usr/local/bin/abracadabra-udev.sh %p'"
+KERNEL=="gpio45", SUBSYSTEM=="gpio", ACTION=="add", PROGRAM="/bin/sh -c '/usr/local/bin/abracadabra-udev.sh %p'"
+KERNEL=="gpio46", SUBSYSTEM=="gpio", ACTION=="add", PROGRAM="/bin/sh -c '/usr/local/bin/abracadabra-udev.sh %p'"
+KERNEL=="gpio47", SUBSYSTEM=="gpio", ACTION=="add", PROGRAM="/bin/sh -c '/usr/local/bin/abracadabra-udev.sh %p'"
+KERNEL=="gpio65", SUBSYSTEM=="gpio", ACTION=="add", PROGRAM="/bin/sh -c '/usr/local/bin/abracadabra-udev.sh %p'"
+KERNEL=="gpio69", SUBSYSTEM=="gpio", ACTION=="add", PROGRAM="/bin/sh -c '/usr/local/bin/abracadabra-udev.sh %p'"
 
